@@ -1,0 +1,38 @@
+@model List<todoApp.Data.User>
+
+@{
+    Layout = "_Layout"; 
+}
+
+<h2>Welcome to the Todo App</h2>
+<p>This is the main content area. Select an option from the menu to get started.</p>
+
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.UserId</td>
+                <td>@user.UserName</td>
+                <td>@user.UserSurname</td>
+                <td>@user.UserMail</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+<form asp-action="DeleteAllUsers" method="get">
+    <button type="submit">Tüm Kullanıcıları Sil</button>
+</form>
+
+

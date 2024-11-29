@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo App</title>
+</head>
+<body style="margin: 0; font-family: Arial, sans-serif; display: flex;">
+    
+    <div style="width: 200px; height: 100ch; background-color: #333; color: #fff; display: flex; flex-direction: column; padding: 20px; justify-content: space-between;">
+        
+        <div>
+            <h1 style="font-size: 24px; margin-bottom: 20px;">Menu</h1>
+
+            
+            <h2 style="font-size: 18px; margin-top: 20px; margin-bottom: 10px; color: #ddd;">Tasks</h2>
+            <ul style="list-style: none; padding: 0; margin: 0;">
+                <li style="margin: 10px 0;">
+                    <a asp-controller="Auth" asp-action="Upcoming" style="display: block; background-color: #444; color: #fff; text-align: center; padding: 10px; margin-top: 10px; text-decoration: none; border-radius: 4px;">Upcoming</a>
+                </li>
+                <li style="margin: 10px 0;">
+                    <a asp-controller="Auth" asp-action="Today" style="display: block; background-color: #444; color: #fff; text-align: center; padding: 10px; margin-top: 10px; text-decoration: none; border-radius: 4px;">Today</a>
+                </li>
+                <li style="margin: 10px 0;">
+                    <a asp-controller="Auth" asp-action="Calendar" style="display: block; background-color: #444; color: #fff; text-align: center; padding: 10px; margin-top: 10px; text-decoration: none; border-radius: 4px;">Calendar</a>
+                </li>
+                <li style="margin: 10px 0;">
+                    <a asp-controller="Auth" asp-action="Main" style="display: block; background-color: #444; color: #fff; text-align: center; padding: 10px; margin-top: 10px; text-decoration: none; border-radius: 4px;">Sticky Wall</a>
+                </li>
+            </ul>
+
+            
+            <h2 style="font-size: 18px; margin-top: 20px; margin-bottom: 10px; color: #ddd;">Lists</h2>
+            <a asp-controller="Lists" asp-action="Add" style="display: block; background-color: #444; color: #fff; text-align: center; padding: 10px; margin-top: 10px; text-decoration: none; border-radius: 4px;">Add New List</a>
+        </div>
+
+        
+        <div>
+            <a asp-controller="Auth" asp-action="Settings" style="display: block; background-color: #444; color: #fff; text-align: center; padding: 10px; margin-top: 10px; text-decoration: none; border-radius: 4px;">Settings</a>
+            <a asp-controller="Auth" asp-action="Login" style="display: block; background-color: #444; color: #fff; text-align: center; padding: 10px; margin-top: 10px; text-decoration: none; border-radius: 4px;">Sign Out</a>
+        </div>
+    </div>
+
+     <div style="flex: 1; padding: 20px;">
+        @RenderBody() 
+    </div>
+
+</body>
+</html>
